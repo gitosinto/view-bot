@@ -2,6 +2,7 @@
 A View Bot in Python
 
 With its own UI:
+
 ![](https://github.com/TerrificTable/YouTube-and-TikTok--View-Bot/blob/main/ui.png)
 
 # install requirements
