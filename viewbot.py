@@ -44,6 +44,9 @@ def get_config():
 
 # Channel ViewBot
 class Bot():
+    global randomdel
+    randomdel = int(randint(0, 60))
+
     def __init__(self):
         self.browser = webdriver.Chrome(executable_path=PATH)
 
@@ -77,7 +80,8 @@ class Bot():
 
         thumbnailElm = self.__videoID(self.videoNumber)
         thumbnailElm.click()
-        sleep(watchTime)
+        print(f" {log} Watchtime: {watchTime}(sec) + {randomdel}(sec)")
+        sleep(int(watchTime + round(randomdel)))
     
     def stop(self):
         self.browser.close()
@@ -86,6 +90,9 @@ class Bot():
 
 # ViewBot's
 def viewbotv1():
+    global randomdel
+    randomdel = int(randint(0, 60))
+
     if str(d).lower() == "c":
         duration = input(f" {inp} Enter Duration (min): ")
 
@@ -93,7 +100,8 @@ def viewbotv1():
     def view():
         if str(d).lower() == "c":
             webbrowser.open(url)
-            sleep(round(int(duration))*60)
+            print(f" {log} Delay: {duration}(sec) + {randomdel}(sec)")
+            sleep(round(int(duration))*60 + round(randomdel))
         elif str(d).lower() == "r":
             webbrowser.open(url)
             sleep(round(int(randint(1, 5)*60)))
@@ -115,13 +123,17 @@ def viewbotv1():
     try:
         for i in range(len(threads)):
             thread.join()
-            sleep(int(delay))
+            print(f" {log} Delay: {delay}(sec) + {randomdel}(sec)")
+            sleep(int(delay) + round(randomdel))
     except Exception as e:
         print(f" {err} {e}\n {finish}")
         input(); exit()
 
 
 class viewbotv2():
+    global randomdel
+    randomdel = int(randint(0, 60))
+
     def __init__(self):
         self.browser = webdriver.Chrome(executable_path=PATH)
 
@@ -141,7 +153,8 @@ class viewbotv2():
 
         for i in range(int(sessions)):
             self.__video()
-            sleep(int(watchTime))
+            print(f" {log} Delay: {watchTime}(sec) + {randomdel}(sec)")
+            sleep(round(int(watchTime + randomdel)))
     
     def stop(self):
         self.browser.close()
