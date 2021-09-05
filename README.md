@@ -2,6 +2,7 @@
 a View Bot in python
 
 # install requirements
+Use cd to get inside the folder the requirements.txt is saved in and execute this command:
 ```
 python -m pip install -r requirements.txt
 ```
