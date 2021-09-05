@@ -5,7 +5,7 @@ With its own UI:
 
 ![](https://github.com/TerrificTable/YouTube-and-TikTok--View-Bot/blob/main/ui.png)
 
-[Read More](https://terrifictable.github.io/blog/view-bot/)
+[Read More](https://terrifictable.github.io/blog/view-bot/index.html)
 
 # install requirements
 Use cd to get inside the folder the requirements.txt is saved in and execute this command:
