@@ -1,5 +1,8 @@
 # View-Bot
-a View Bot in python
+A View Bot in Python
+
+With its own UI:
+![](https://github.com/TerrificTable/YouTube-and-TikTok--View-Bot/blob/main/ui.png)
 
 # install requirements
 Use cd to get inside the folder the requirements.txt is saved in and execute this command:
