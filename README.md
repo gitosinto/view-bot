@@ -6,6 +6,16 @@ Use cd to get inside the folder the requirements.txt is saved in and execute thi
 ```
 python -m pip install -r requirements.txt
 ```
+# Update
+v.1.0:
+  - ViewBot v.1
+  - ViewBot v.2
+  - ChannelViewBot
+  - Credits
+
+v.2.0:
+  - added a random delay added to input delay
+
 # Legality
 Educational purpose only.
 
