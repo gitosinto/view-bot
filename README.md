@@ -7,11 +7,18 @@ With its own UI:
 
 [Read More](https://terrifictable.github.io/blog/view-bot/index.html)
 
-# install requirements
-Use cd to get inside the folder the requirements.txt is saved in and execute this command:
+# Installation
+Use these commands to:
+Clone this Repository,
+Open the downloaded folder in your cmd,
+And install the required librarys
 ```
+git clone https://github.com/TerrificTable/YouTube-and-TikTok--View-Bot/
+cd YouTube-and-TikTok--View-Bot
 python -m pip install -r requirements.txt
 ```
+
+
 # Update
 v.1.0:
   - ViewBot v.1
