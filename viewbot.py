@@ -1,3 +1,5 @@
+import os
+
 try:
     from selenium import webdriver
     from random import randint
@@ -5,11 +7,22 @@ try:
     import webbrowser
     import threading
     from colorama import Fore, Style
-    import os
     import io
     import json
 except Exception as e:
-    print(f" [ERROR] - {e}")
+    os.system(f'mode 110,30')
+    os.system('cls'); os.system("title [Terrific's ViewBot - Connected]")
+    print(f" [ERROR] Coulnt import library's, installing librarys")
+    reqpath = input(f" [>] Input The path of the folder this file is in: ")
+    reqpath.replace('\\', '/')
+    try:
+        os.system(f'cd {reqpath}')
+        os.system('python -m pip install -r requirements.txt')
+    except Exception as e:
+        print(" [ERROR] {e}")
+    print(" Press Enter to exit")
+    input(); exit()
+
 
 err = f"[{Fore.RED}-{Style.RESET_ALL}]"
 out = f"[{Fore.GREEN}:{Style.RESET_ALL}]"
@@ -20,8 +33,9 @@ finish = f"press [{Fore.YELLOW}ENTER{Style.RESET_ALL}] to exit"
 
 def get_config():
     global PATH
-    path = input(f" {inp} Config file path with config.json: ")
+    path = input(f" {inp} Config file path without config.json: ")
 
+    path = path + "/config.json"
     if not os.path.exists(path):
         with io.open(path, "w") as f:
             data = {
