@@ -94,8 +94,8 @@ class Bot():
 
         thumbnailElm = self.__videoID(self.videoNumber)
         thumbnailElm.click()
-        print(f" {log} Watchtime: {watchTime}(sec) + {randomdel}(sec)")
-        sleep(int(watchTime + round(randomdel)))
+        print(f" {log} Watchtime: {watchTime}(sec) + {randomdel+(watchTime/2)}(sec)")
+        sleep(int(watchTime + round(randomdel+(watchTime/2))))
     
     def stop(self):
         self.browser.close()
@@ -114,8 +114,8 @@ def viewbotv1():
     def view():
         if str(d).lower() == "c":
             webbrowser.open(url)
-            print(f" {log} Delay: {duration}(sec) + {randomdel}(sec)")
-            sleep(round(int(duration))*60 + round(randomdel))
+            print(f" {log} Delay: {duration}(sec) + {randomdel+(duration/2)}(sec)")
+            sleep(round(int(duration))*60 + round(randomdel+(duration/2)))
         elif str(d).lower() == "r":
             webbrowser.open(url)
             sleep(round(int(randint(1, 5)*60)))
@@ -128,7 +128,7 @@ def viewbotv1():
             thread.daemon = True
             threads.append(thread)
             thread.start()
-            sleep(int(delay))
+            sleep(int(delay+(delay/2)))
         print(f" {out} Finished, {finish}")
     except Exception as e:
         print(f" {err} {e}\n {finish}")
@@ -137,8 +137,8 @@ def viewbotv1():
     try:
         for i in range(len(threads)):
             thread.join()
-            print(f" {log} Delay: {delay}(sec) + {randomdel}(sec)")
-            sleep(int(delay) + round(randomdel))
+            print(f" {log} Delay: {delay}(sec) + {randomdel+(delay/2)}(sec)")
+            sleep(int(delay) + round(randomdel+(delay/2)))
     except Exception as e:
         print(f" {err} {e}\n {finish}")
         input(); exit()
@@ -167,8 +167,8 @@ class viewbotv2():
 
         for i in range(int(sessions)):
             self.__video()
-            print(f" {log} Delay: {watchTime}(sec) + {randomdel}(sec)")
-            sleep(round(int(watchTime + randomdel)))
+            print(f" {log} Delay: {watchTime}(sec) + {randomdel+(watchTime/2)}(sec)")
+            sleep(round(int(randomdel+(watchTime/2))))
     
     def stop(self):
         self.browser.close()
