@@ -7,6 +7,9 @@ With its own UI:
 
 [Read More](https://terrifictable.github.io/blog/view-bot/index.html)
 
+# ToDo
+- add proxy's tp change IP's
+
 # Installation
 Use these commands to:
 Clone this Repository,
@@ -20,14 +23,23 @@ python -m pip install -r requirements.txt
 
 
 # Update
+v.2.3:
+  - added more delay between viewing videos
+  
+v.2.2:
+  - Added more delay (randint(0, (delay+(delay/2))))
+  
+v.2.1:
+  - added a import catch and install lib's option (requires the "requirements.txt" file)
+
+v.2.0:
+  - added a random delay added to input delay
+  
 v.1.0:
   - ViewBot v.1
   - ViewBot v.2
   - ChannelViewBot
   - Credits
-
-v.2.0:
-  - added a random delay added to input delay
 
 # Legality
 Educational purpose only.
