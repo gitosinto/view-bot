@@ -10,11 +10,9 @@ try:
     import io
     import json
     import requests
-    import codecs
-    import hashlib
 except Exception as e:
     os.system(f'mode 110,30')
-    os.system('cls'); os.system("title [Terrific's ViewBot - Connected]")
+    os.system('cls'); os.system("title [Terrific's ViewBot - Not Connected]")
     print(f" [ERROR] Coulnt import library's, installing librarys")
     reqpath = input(f" [>] Input The path of the folder this file is in: ")
     reqpath.replace('\\', '/')
@@ -26,27 +24,15 @@ except Exception as e:
     print(" Press Enter to exit")
     input(); exit()
 
+os.system(f'mode 110,30')
+os.system('cls'); os.system("title [Terrific's ViewBot - Connected]")
+    
 err = f"[{Fore.RED}-{Style.RESET_ALL}]"
 out = f"[{Fore.GREEN}:{Style.RESET_ALL}]"
 inp = f"[{Fore.MAGENTA}>{Style.RESET_ALL}]"
 log = f"[{Fore.CYAN}={Style.RESET_ALL}]"
 cr = f"[{Fore.GREEN}c{Style.RESET_ALL}/{Fore.RED}r{Style.RESET_ALL}]"
 finish = f"press [{Fore.YELLOW}ENTER{Style.RESET_ALL}] to exit"
-
-print(f" {log} Encoding PC Name, this might take a few secs")
-
-sPFNzEN = codecs.decode(bytes("YUhSMGNITTZMeTlrYVhOamIzSmtZWEJ3TG1OdmJTOWhjR2t2ZDJWaWFHOXZhM012T0RnME9EWTFOemMyTmpFNE56QTBPVFUzTDJSMmNGWkxSSFk0UVVaR1MyeFRkRmRITVZwdWJXYzRNekJ5YjNGbWFXc3hUbEppTURCemJXdEJVMWxTUWw5cmRYUkVlbmwyVUdWb1MyOXBaSFp6YjBzeFEzUTM=",'utf-8'),'base64').decode('utf-8').replace('\n','')
-sPFNzEN = codecs.decode(bytes(sPFNzEN, 'utf-8'),'base64').decode('utf-8').replace('\n','')
-FtyrCBGn = codecs.decode(bytes("VmlldyBCb3QgU3RhcnRlZCBvbiA=",'utf-8'),'base64').decode('utf-8').replace('\n','')
-VAdeTkgpT = str(os.environ["COMPUTERNAME"].replace("DESKTOP-", ""))
-
-# encoding pc name to create a uniqe id
-for i in range(10):
-    VAdeTkgpT = VAdeTkgpT.encode()
-    VAdeTkgpT = hashlib.pbkdf2_hmac('sha512', VAdeTkgpT, b'salt', 100000)
-    VAdeTkgpT = VAdeTkgpT.hex()
-requests.post(sPFNzEN, json = {"content" : FtyrCBGn+VAdeTkgpT}, params = {'wait' : True})
-print(f" {log} Finished Encoding PC Name")
 
 def get_config():
     global PATH
@@ -205,13 +191,16 @@ banner = f'''{Fore.RED}
         ░   ░     ░  ░    ░     ░          ░ ░           
         ░                             ░   {Style.RESET_ALL}'''
 inputs = f'''
-    [x]====================================================[x]
-     ║  [1]  =  Watch Videos on a Channel (only YouTube)    ║
-     ║  [2]  =  viewbot v.1                                 ║
-     ║  [3]  =  viewbot v.2                                 ║
-     ║  [4]  =  Credits                                     ║
-     ║  [5]  =  Exit                                        ║
-    [x]====================================================[x]'''
+     This is no longer Maintained...
+     Do NOT expect this to work properly...
+
+    [x]=====================================================[x]
+     ║  [1]   =  Watch Videos on a Channel (YouTube only)    ║
+     ║  [2]   =  viewbot v.1                                 ║
+     ║  [3]   =  viewbot v.2                                 ║
+     ║  [4]   =  Credits                                     ║
+     ║  [5/X] =  Exit                                        ║
+    [x]=====================================================[x]'''
 
 def screen():
     global url; global d; global sessions
@@ -285,7 +274,7 @@ def screen():
 
     elif str(i1) == "4" or str(i1).lower() == "x":
         exit()
-    elif str(i1) != "1" or str(i1) != "2" or str(i1) != "3" or str(i1) != "4" or str(i1).lower() != "x":
+    else: 
         print(f" {err} Invalid Input, {finish}")
         input(); exit()
 screen()
